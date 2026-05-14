@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>2Team Dashboard</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          primary: { light: '#06b6d4', DEFAULT: '#0891b2', dark: '#0e7490' }
+        },
+        fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+      },
+    },
+  }
+</script>
+<style>
+  .fade-slide { animation: fadeSlide 0.5s ease forwards; }
+  @keyframes fadeSlide { from {opacity:0; transform: translateY(10px);} to {opacity:1; transform: translateY(0);} }
+
+  tbody tr { transition: background 0.3s, transform 0.2s; cursor: pointer; }
+  tbody tr:hover { background-color: rgba(14,165,233,0.1); transform: translateX(2px); }
+
+  ::-webkit-scrollbar { width:6px; height:6px; }
+  ::-webkit-scrollbar-thumb { background:rgba(148,163,184,0.6); border-radius:9999px; }
+
+  td { max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  td:hover { white-space: normal; overflow: visible; }
+
+  .glass {
+    backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255,255,255,0.75);
+  }
+  html.dark .glass {
+    background-color: rgba(30,41,59,0.6);
+  }
+</style>
+</head>
+
+<body class="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-900 dark:to-slate-950 min-h-screen font-sans text-gray-800 dark:text-gray-100 transition-colors duration-500 flex flex-col items-center">
+</body>
+</html>
